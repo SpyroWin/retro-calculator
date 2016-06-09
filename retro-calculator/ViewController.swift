@@ -31,6 +31,9 @@ class ViewController: UIViewController {
     
     //Outlet
     @IBOutlet weak var outputLbl: UILabel!
+    @IBOutlet weak var launchbg: UIImageView!
+    @IBOutlet weak var welcomeUI: UIStackView!
+    @IBOutlet weak var welcomBtn: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -48,7 +51,22 @@ class ViewController: UIViewController {
         
         
     }
+    
+    @IBAction func onWelcomePressed(sender: AnyObject){
+        launchbg.hidden = true
+        welcomeUI.hidden = true
+        welcomBtn.hidden = true
+    }
 
+    @IBAction func onClearPressed(sender: AnyObject) {
+        outputLbl.text = ""
+        runningNumber = ""
+        leftValStr = ""
+        rightValStr = ""
+        currentOperation = Operation.Empty
+        result = ""
+    }
+    
     @IBAction func numberPressed(btn:UIButton!){
         playSound()
         
